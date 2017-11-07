@@ -1,0 +1,40 @@
+<!doctype html>
+<html ng-app="App">
+	<head>
+		<title>EN378 data SPA</title>
+		<meta charset="UTF-8">
+
+		<meta name="viewport" content="initial-scale=1.0"> </head>
+			<link rel="stylesheet" href="/modules/css/bootstrap.min.css" />
+			<script src="/modules/js/angular.min.js"></script>
+			<script src="/modules/js/angular-route.min.js"></script>
+			<script src="/modules/js/angular-resource.min.js"></script>
+			<link rel="stylesheet" href="/css/font-awesome/css/font-awesome.min.css">
+
+			<script src="/js/app.js"></script>
+			<script src="/js/routes.js"></script>	
+			<script src="/js/controllers.js"></script>	
+	</head>
+    <body >
+        <header >
+			<nav class="navbar navbar-default">
+			<div class="container">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="/">EN378 data</a>
+				</div>
+
+				<ul class="nav navbar-nav navbar-right">
+					<li ><a href="/"><i class="fa fa-home"></i> Home</a></li>
+				</ul>
+			</div>
+			</nav>
+		</header>
+
+        <div class="container" ng-controller="homeController">
+			<a href="#!table">Table |</a>
+			<a href="#"> Home</a>
+			<div ng-view></div>
+		</div>
+
+    </body>
+</html>

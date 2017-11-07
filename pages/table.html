@@ -1,0 +1,44 @@
+<div class="container">
+
+	    <form>
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-addon"><i class="fa fa-search"></i></div>
+          <input type="text" class="form-control" placeholder="Search" ng-model="searchItem">
+        </div>
+      </div>
+    </form>
+
+    <table class="table table-bordered table-striped">
+
+      <thead>
+        <tr>
+          <td>
+            <a href="" ng-click="sortType = 'Refrigerant_number'; sortReverse = !sortReverse">
+             Refrigerant number
+              <span ng-show="sortType == 'Refrigerant_number' && !sortReverse" class="fa fa-caret-down"></span>
+              <span ng-show="sortType == 'Refrigerant_number' && sortReverse" class="fa fa-caret-up"></span>
+            </a>
+          </td>
+          <td>
+            <a href="" ng-click="sortType = 'Chemical_name'; sortReverse = !sortReverse">
+            Chemical name
+              <span ng-show="sortType == 'Chemical_name' && !sortReverse" class="fa fa-caret-down"></span>
+              <span ng-show="sortType == 'Chemical_name' && sortReverse" class="fa fa-caret-up"></span>
+            </a>
+          </td>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr ng-repeat="item in refs | orderBy:sortType:sortReverse | filter:searchItem">
+
+          <td>{{ item.Refrigerant_number }}</td>
+          <td>{{ item.Chemical_name }}</td>
+        </tr>
+      </tbody>
+
+    </table>
+
+</div>
+
